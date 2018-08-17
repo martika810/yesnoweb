@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mrb.coding.mapper.SnippetMapper">
+    <resultMap id="BaseResultMap" type="com.mrb.coding.model.domain.Snippet">
+        <!-- WARNING - @mbg.generated -->
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="note" jdbcType="VARCHAR" property="note"/>
+        <result column="templateId" jdbcType="VARCHAR" property="templateId"/>
+        <result column="data" jdbcType="VARCHAR" property="data"/>
+    </resultMap>
+
+    <sql id="BaseColumns">
+        <!-- WARNING - @mbg.generated -->
+        id, note, templateId, data
+    </sql>
+
+</mapper>

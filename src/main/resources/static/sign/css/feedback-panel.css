@@ -1,0 +1,15 @@
+.question-panel{
+    display: block;
+    padding:10px;
+}
+
+.question-panel h4{
+    margin-bottom: 15px;
+}
+.question-panel input{
+    margin-right: 10px;
+}
+
+#feedback-panel .btn-success{
+    display: none;
+}

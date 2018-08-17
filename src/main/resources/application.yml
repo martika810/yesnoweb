@@ -1,4 +1,6 @@
 debug: false
+server:
+  port: 8089
 
 logging:
   level:

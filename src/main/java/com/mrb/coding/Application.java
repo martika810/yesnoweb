@@ -1,10 +1,7 @@
 package com.mrb.coding;
 
-import com.alibaba.dubbo.common.logger.jcl.JclLogger;
 import com.baidu.unbiz.easymapper.mapping.ServiceLoaderHelper;
-import com.mrb.coding.service.CityService;
 import com.mrb.coding.service.SnippetService;
-import com.mrb.coding.util.JsonUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +10,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * SpringBoot 启动类

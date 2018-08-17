@@ -52,6 +52,7 @@
         <typehandlers-encrypt.version>1.1.1</typehandlers-encrypt.version>
         <univocity.parsers.version>2.5.9</univocity.parsers.version>
         <zkclient.version>0.10</zkclient.version>
+        <spring.jpa.version>1.0.0.RELEASE</spring.jpa.version>
         <!-- Maven 插件 -->
         <cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
         <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
@@ -260,10 +261,16 @@
             <version>${univocity.parsers.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring.jpa.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <profiles>

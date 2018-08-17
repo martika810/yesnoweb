@@ -1,0 +1,20 @@
+.chart-wrapper{
+    height:30px;
+}
+
+.card-body .text-light{
+    margin-right: 15px;
+}
+
+.card-body span.metric-number{
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+.modal .fade .show{
+    display: block;
+}
+
+.breadcrumbs button{
+    margin:15px;
+}

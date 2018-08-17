@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/feedback-panel.css" rel="stylesheet" type="text/css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen" type="text/css">
+    <script type="text/javascript" src="../js/vendor/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../js/feedback-button.js"></script>
+
+</head>
+<body>
+<div id="feedback-panel" style="height:70px">
+        <button style="margin: 9% 8%" type="button" class="btn btn-success">Give feedback</button>
+        <div class="question-panel">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <h5>Was this page useful?</h5>
+            <form>
+                <label><input type="radio" value="yes">Yes</label>
+                <label><input type="radio" value="neutral">Yes,But</label>
+                <label><input type="radio" value="no">No</label>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

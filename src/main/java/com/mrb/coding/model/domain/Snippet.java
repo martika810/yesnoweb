@@ -33,6 +33,18 @@ public class Snippet implements Serializable {
     @Column(name= "data")
     private String data;
 
+    @Column(name= "groupname")
+    private String group;
+
+    @Column(name= "yesAnswers")
+    private int yesAnswers;
+
+    @Column(name= "neutralAnswers")
+    private int neutralAnswers;
+
+    @Column(name= "noAnswers")
+    private int noAnswers;
+
     public Snippet(String id) {
         this.id = id;
     }
@@ -69,6 +81,38 @@ public class Snippet implements Serializable {
         this.data = data;
     }
 
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    public int getYesAnswers() {
+        return yesAnswers;
+    }
+
+    public void setYesAnswers(int yesAnswers) {
+        this.yesAnswers = yesAnswers;
+    }
+
+    public int getNeutralAnswers() {
+        return neutralAnswers;
+    }
+
+    public void setNeutralAnswers(int neutralAnswers) {
+        this.neutralAnswers = neutralAnswers;
+    }
+
+    public int getNoAnswers() {
+        return noAnswers;
+    }
+
+    public void setNoAnswers(int noAnswers) {
+        this.noAnswers = noAnswers;
+    }
+
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(this).omitNullValues()
@@ -76,6 +120,22 @@ public class Snippet implements Serializable {
                 .add("note", note)
                 .add("templateId", templateId)
                 .add("data", data)
+                .add("groupname", group)
+                .add("yesAnswers", yesAnswers)
+                .add("neutralAnswers", neutralAnswers)
+                .add("noAnswers", noAnswers)
                 .toString();
+    }
+
+    public static Snippet of(Snippet snippet){
+        Snippet newSnippet = new Snippet(snippet.getId());
+        newSnippet.setNote(snippet.getNote());
+        newSnippet.setTemplateId(snippet.getTemplateId());
+        newSnippet.setData(snippet.getData());
+        newSnippet.setGroup(snippet.getGroup());
+        newSnippet.setYesAnswers(snippet.getYesAnswers());
+        newSnippet.setNeutralAnswers(snippet.getNeutralAnswers());
+        newSnippet.setNoAnswers(snippet.getNoAnswers());
+        return newSnippet;
     }
 }
