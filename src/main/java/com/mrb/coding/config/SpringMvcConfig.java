@@ -1,8 +1,11 @@
 package com.mrb.coding.config;
 
+import com.mrb.coding.intercept.TokenInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
+import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.*;
 
 /**
@@ -12,6 +15,7 @@ import org.springframework.web.servlet.config.annotation.*;
  */
 @Configuration
 public class SpringMvcConfig {
+
 
     @Bean
     public WebMvcConfigurer webMvcConfigurer() {
@@ -26,6 +30,13 @@ public class SpringMvcConfig {
                 configurer
                         .setUseSuffixPatternMatch(false)
                         .setUseTrailingSlashMatch(true);
+            }
+
+            @Override
+            public void addInterceptors(InterceptorRegistry registry) {
+                registry.addInterceptor(new TokenInterceptor())
+                        //.addPathPatterns("/sign/**")
+                        .addPathPatterns("/snippet/**");
             }
 
             /**

@@ -1,16 +1,59 @@
 console.log("Loaded angular snippet module");
 var snippetApp = angular.module('snippetApp',[]);
-snippetApp.controller('snippetController',function($scope,$http){
+snippetApp.factory('actionTypeFactory', ['$resource', '$location', function($resource, $location){
+  return $resource($location.protocol() + '://'+ $location.host() +':'+  $location.port()  +'82/somelocation')
+}]);
+snippetApp.controller('snippetController',function($scope,$http,$location){
 
+    var hostUrl = $location.protocol() + '://'+ $location.host() +':'+  $location.port();
     $scope.populateSnippetPanel = function(){
-        $http.get('http://localhost:8087/snippet/listall')
+        var config = {headers:  {
+            "token" : "testing"
+        }};
+        $http.get(hostUrl+'/snippet/listall',config)
             .then(function(response){
                $scope.snippetList = response.data;
             });
     };
 
+    $scope.selectSnippet = function(selectedSnippet){
+        $scope.selectedSnippet = selectedSnippet;
+    }
+
+    $scope.saveNoteSnippet = function(event){
+        if(event.which == 13){
+             $scope.selectedSnippet.note = jQuery(event.currentTarget).val()
+             var config = {headers:  {"token" : "testing"}};
+             $http.put(hostUrl +'/snippet/'+$scope.selectedSnippet.id,$scope.selectedSnippet,config)
+                .then(function(response){
+                    $scope.cleanupSnippetPanel();
+                    $scope.populateSnippetPanel();
+                    jQuery('.breadcrumbs #add-snippet').removeAttr("disabled");
+                    console.log('new snippet send');
+                });
+        }
+    }
+
+    $scope.saveDataSnippet = function(event){
+            if(event.which == 13){
+                 $scope.selectedSnippet.data = jQuery(event.currentTarget).val()
+                 var config = {headers:  {"token" : "testing"}};
+                 $http.put(hostUrl +'/snippet/'+$scope.selectedSnippet.id,$scope.selectedSnippet,config)
+                    .then(function(response){
+                        $scope.cleanupSnippetPanel();
+                        $scope.populateSnippetPanel();
+                        jQuery('.breadcrumbs #add-snippet').removeAttr("disabled");
+                        console.log('new snippet send');
+                    });
+                 }
+            }
+
+
     $scope.displayHtmlSnippet = function(snippetId){
-        $http.get('http://localhost:8087/snippet/html/'+snippetId)
+        var config = {headers:  {
+                "token" : "testing"
+            }};
+        $http.get(hostUrl+'/snippet/html/'+snippetId,config)
             .then(function(response){
                $scope.selectedHtmlSnippet = response.data;
             });
@@ -21,7 +64,8 @@ snippetApp.controller('snippetController',function($scope,$http){
     }
 
     $scope.deleteSnippet = function(snippetId){
-        $http.delete('http://localhost:8087/snippet/' + snippetId)
+        var config = {headers:  {"token" : "testing"}};
+        $http.delete(hostUrl+'/snippet/' + snippetId,config)
             .then(function(){
                 console.log('Deleted!');
                 $scope.cleanupSnippetPanel();
@@ -32,7 +76,7 @@ snippetApp.controller('snippetController',function($scope,$http){
     }
     $scope.createListenerAddSnippet = function(){
             jQuery('.breadcrumbs #add-snippet').click(function(){
-                $http.get('http://localhost:8087/sign/new_snippet.html')
+                $http.get(hostUrl+'/sign/new_snippet.html')
                      .then(function(response){
                                $scope.addHtmlPiece = response.data;
                                jQuery('#snippetPanel').prepend($scope.addHtmlPiece);
@@ -42,7 +86,8 @@ snippetApp.controller('snippetController',function($scope,$http){
                                    newSnippet.note = jQuery('#new-snippet-note').val();
                                    newSnippet.data = jQuery('#new-snippet-question').val();
                                    newSnippet.group = 'default';
-                                   $http.post('http://localhost:8087/snippet/create',newSnippet)
+                                   var config = {headers:  {"token" : "testing"}};
+                                   $http.post(hostUrl +'/snippet/create',newSnippet,config)
                                         .then(function(response){
                                             $scope.cleanupSnippetPanel();
                                             $scope.populateSnippetPanel();

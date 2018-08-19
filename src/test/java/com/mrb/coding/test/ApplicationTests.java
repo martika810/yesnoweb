@@ -35,7 +35,8 @@ public class ApplicationTests extends SpringBaseTest {
     public void loadAllSnippets() throws Exception {
         Snippet expectedSnippet = createMockSnippet();
 
-        mockMvc.perform(get("/snippet/listall"))
+        mockMvc.perform(get("/snippet/listall")
+                            .header("token","123"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.[0].id",is(expectedSnippet.getId())))
@@ -54,13 +55,14 @@ public class ApplicationTests extends SpringBaseTest {
 
 
         MockHttpServletRequestBuilder voteRequest = put("/snippet/vote/5")
+                .header("token","123")
                 .content("\"yes\"")
                 .contentType(MediaType.APPLICATION_JSON);
         mockMvc.perform(voteRequest)
                 .andDo(print())
                 .andExpect(status().isAccepted());
 
-        mockMvc.perform(get("/snippet/get/5"))
+        mockMvc.perform(get("/snippet/get/5").header("token","123"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id",is(expectedSnippet.getId())))
@@ -80,7 +82,11 @@ public class ApplicationTests extends SpringBaseTest {
         Snippet newSnippet= createMockSnippet();
         ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
         String json = ow.writeValueAsString(newSnippet);
-        mockMvc.perform(post("/snippet/create").content(json).contentType(MediaType.APPLICATION_JSON))
+        mockMvc.perform(post("/snippet/create")
+                             .header("token","123")
+                            .content(json)
+                            .contentType(MediaType.APPLICATION_JSON)
+        )
                 .andDo(print())
                 .andExpect(status().isCreated());
     }
@@ -88,7 +94,8 @@ public class ApplicationTests extends SpringBaseTest {
     @Test
     public void listGroups() throws Exception {
         Group expectedGroup = createGroup();
-        mockMvc.perform(get("/snippet/group/listall"))
+        mockMvc.perform(get("/snippet/group/listall")
+                .header("token","123"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.[0].id",is(expectedGroup.getId())))

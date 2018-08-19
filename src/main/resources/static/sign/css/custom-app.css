@@ -18,3 +18,10 @@
 .breadcrumbs button{
     margin:15px;
 }
+.form-control{
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    background-color: initial;
+    border-radius: .0rem;
+}

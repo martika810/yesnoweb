@@ -55,6 +55,12 @@ public class SnippetController {
 
     }
 
+    @PutMapping("/{snippetId}")
+    public ResponseEntity updateSnippet(@RequestBody Snippet snippet){
+        snippetService.update(snippet);
+        return ResponseEntity.accepted().build();
+    }
+
     @DeleteMapping("/{snippetId}")
     public ResponseEntity deleteSnippet(@PathVariable String snippetId){
         Snippet snippet = snippetService.selectByPk(snippetId);

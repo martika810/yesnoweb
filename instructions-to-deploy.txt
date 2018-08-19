@@ -1,0 +1,9 @@
+install the elacticbeantalk client
+
+    pip install awsebcli --upgrade
+
+initalize the project to deploy in aws-eb
+
+    eb init
+
+add deploy part in the elacticbeantalk config file

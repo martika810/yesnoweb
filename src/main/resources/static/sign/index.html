@@ -186,30 +186,44 @@
         <div class="snippetList" ng-repeat="snippet in snippetList">
                 <div class="col-sm-6 col-lg-12">
                     <div class="card text-white bg-flat-color-1">
-                        <div id="card-body-1" class="card-body pb-0">
-                            <div class="dropdown float-right">
-                                <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button"
-                                        id="dropdownMenuButton" data-toggle="dropdown">
-                                    <i class="fa fa-cog"></i>
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <div class="dropdown-menu-content">
-                                        <a class="dropdown-item htmlsnippet" data-toggle="modal" data-target="#displayHtmlModal" ng-click="displayHtmlSnippet(snippet.id)" data={{snippet.id}} href="#">HTML Snippet</a>
-                                        <a class="dropdown-item delete" href="#" ng-click="deleteSnippet(snippet.id)">Delete</a>
+                        <div id="card-body-1" class="card-body pb-0" ng-click="selectSnippet(snippet)">
+                            <div class="row form-group">
+                                <div class="col-11">
+                                    <h4 class="mb-0">
+                                        <!--ng-click="addTextAreaToEditText($event,snippet.note)" -->
+                                        <input type="text" name="text-input" ng-keypress="saveNoteSnippet($event)" value="{{snippet.note}}" placeholder="Text" class="form-control">
+                                        </input>
+                                    </h4>
+                                </div>
+                                <div class="col-1">
+                                    <div class="dropdown float-right">
+                                        <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button"
+                                                id="dropdownMenuButton" data-toggle="dropdown">
+                                            <i class="fa fa-cog"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <div class="dropdown-menu-content">
+                                                <a class="dropdown-item htmlsnippet" data-toggle="modal" data-target="#displayHtmlModal" ng-click="displayHtmlSnippet(snippet.id)" data={{snippet.id}} href="#">HTML Snippet</a>
+                                                <a class="dropdown-item delete" href="#" ng-click="deleteSnippet(snippet.id)">Delete</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <h4 class="mb-0">
-                                <span>{{snippet.note}}</span>
-                            </h4>
-                            <span class="text-light">{{snippet.data}}</span>
-                            <i class="fa fa-check-circle"></i>
-                            <span class="metric-number">{{snippet.yesAnswers}}</span>
-                            <i class="fa fa-meh-o"></i>
-                            <span class="metric-number">{{snippet.neutralAnswers}}</span>
-                            <i class="fa fa-times-circle"></i>
-                            <span class="metric-number">{{snippet.noAnswers}}</span>
-                            <div class="chart-wrapper px-0" height="70"/>
+                            <div class="row form-group">
+                                <div class="col-8">
+                                    <input type="text" name="text-input" ng-keypress="saveDataSnippet($event)" value="{{snippet.data}}" placeholder="Text" class="form-control">
+                                </div>
+                                <div class="col-4">
+                                    <i class="fa fa-check-circle"></i>
+                                    <span class="metric-number">{{snippet.yesAnswers}}</span>
+                                    <i class="fa fa-meh-o"></i>
+                                    <span class="metric-number">{{snippet.neutralAnswers}}</span>
+                                    <i class="fa fa-times-circle"></i>
+                                    <span class="metric-number">{{snippet.noAnswers}}</span>
+                                    <div class="chart-wrapper px-0" height="70"/>
+                                </div>
+                            </div>
                         </div>
 
                     </div>

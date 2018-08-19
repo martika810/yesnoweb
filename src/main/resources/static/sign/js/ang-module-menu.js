@@ -1,9 +1,11 @@
 console.log("Loaded angular menu module");
 var menuApp = angular.module('menuApp',[]);
-menuApp.controller('menuController',function($scope,$http){
+menuApp.controller('menuController',function($scope,$http,$location){
+
+    var hostUrl = $location.protocol() + '://'+ $location.host() +':'+  $location.port();
 
     $scope.displayContributeForm = function(){
-        $http.get('http://localhost:8087/sign/contribute_form.html')
+        $http.get(hostUrl+'/sign/contribute_form.html')
             .then(function(response){
                 $scope.addHtmlPiece = response.data;
                 $scope.cleanupSnippetPanel();
@@ -15,7 +17,8 @@ menuApp.controller('menuController',function($scope,$http){
         jQuery('#snippetPanel').empty();
     }
     $scope.populateGroupMenu = function(){
-        $http.get('http://localhost:8087/snippet/group/listall')
+        var config = {headers:  {"token" : "testing"}};
+        $http.get(hostUrl+'/snippet/group/listall',config)
             .then(function(response){
                 $scope.groupList = response.data;
             });
