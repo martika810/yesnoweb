@@ -55,6 +55,17 @@ spring:
         throw-exception: false
   cache:
     type: none
+security:
+  signing-key: MaYzkSjmkzPC57L
+  encoding-strength: 256
+  security-realm: Strping Bott JWT Example Realm
+  jwt:
+    client-id: testjwtclientid
+    client-secret: client-secret
+    grant-type: password
+    scope-read: read
+    scope-write: write
+    resource-ids: testjwtresourceid
 #  redisson:
 #    type: single
 #    single:
