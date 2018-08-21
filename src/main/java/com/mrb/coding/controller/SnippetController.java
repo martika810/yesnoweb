@@ -37,7 +37,7 @@ public class SnippetController {
 
     @GetMapping("/get/{id}")
     public ResponseEntity<Snippet> getById(@PathVariable String id) {
-        Snippet snippet = snippetService.selectByPk(id);
+        Snippet snippet = snippetService.selectById(id);
         return ResponseEntity.ok(snippet);
     }
 
@@ -50,7 +50,7 @@ public class SnippetController {
     @PutMapping("/vote/{snippetId}")
     public ResponseEntity addVote(@PathVariable String snippetId,
                                               @RequestBody Vote vote){
-        Snippet snippet = snippetService.selectByPk(snippetId);
+        Snippet snippet = snippetService.selectById(snippetId);
         Snippet updatedSnippet = vote(snippet,vote);
         snippetService.update(updatedSnippet);
         return ResponseEntity.accepted().build();
@@ -65,7 +65,7 @@ public class SnippetController {
 
     @DeleteMapping("/{snippetId}")
     public ResponseEntity deleteSnippet(@PathVariable String snippetId){
-        Snippet snippet = snippetService.selectByPk(snippetId);
+        Snippet snippet = snippetService.selectById(snippetId);
         snippetService.delete(snippet);
         return ResponseEntity.accepted().build();
     }

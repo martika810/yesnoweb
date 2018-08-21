@@ -1,14 +1,21 @@
 package com.mrb.coding.service.impl;
 
+import com.google.common.collect.Lists;
+import com.mrb.coding.mapper.SnippetRepository;
 import com.mrb.coding.model.domain.Snippet;
 import com.mrb.coding.service.SnippetService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service("snippetService")
-public class SnippetServiceImpl extends BaseServiceImpl<Snippet,String> implements SnippetService {
+public class SnippetServiceImpl implements SnippetService {
+
+    @Autowired
+    SnippetRepository repository;
 
     @Override
     public String getHtmlSnippet(String snippetId) {
@@ -24,9 +31,27 @@ public class SnippetServiceImpl extends BaseServiceImpl<Snippet,String> implemen
     @Override
     public List<Snippet> selectAllOrderByCreated() {
 
-        Example example = new Example(Snippet.class);
-        example.setOrderByClause("createdtime desc");
-        return selectByExample(example);
+       return Lists.newArrayList(repository.findAll());
 
+    }
+
+    @Override
+    public Snippet selectById(String id) {
+        return repository.findById(id).get();
+    }
+
+    @Override
+    public void update(Snippet snippet) {
+        repository.save(snippet);
+    }
+
+    @Override
+    public void insert(Snippet snippet) {
+        repository.save(snippet);
+    }
+
+    @Override
+    public void delete(Snippet snippet) {
+        repository.delete(snippet);
     }
 }
