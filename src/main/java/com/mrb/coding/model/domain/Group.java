@@ -9,7 +9,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
@@ -19,13 +21,14 @@ import java.io.Serializable;
 @Builder
 @Getter
 @Setter
+@Entity
 @Table(name = "groups")
 public class Group implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(generator = "JDBC")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     @Column(name = "name")

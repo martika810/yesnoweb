@@ -17,7 +17,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * @author trang
  */
 @SpringBootApplication
-@MapperScan("com.mrb.coding.mapper")
+//@MapperScan("com.mrb.coding.mapper")
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 @EnableCaching(proxyTargetClass = true)
 @Slf4j

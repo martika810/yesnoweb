@@ -12,7 +12,7 @@ import tk.mybatis.mapper.entity.Example;
 import java.util.List;
 
 @Service("groupService")
-public class GroupServiceImpl extends BaseServiceImpl<Group,String> implements GroupService {
+public class GroupServiceImpl implements GroupService {
 
     @Autowired
     GroupRepository repository;
