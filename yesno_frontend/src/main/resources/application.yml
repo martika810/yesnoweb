@@ -1,0 +1,15 @@
+server:
+    port: 8084
+zuul:
+  ignoredPatterns:
+    - /public/**
+  routes:
+    oauth:
+      path: /oauth/**
+      url: http://localhost:5000/oauth
+    snippet:
+      path: /snippet/**
+      url: http://localhost:5000/snippet
+  Servlet30WrapperFilter:
+    pre:
+      disable:true
