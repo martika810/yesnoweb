@@ -50,6 +50,14 @@ public class SnippetController {
 
     }
 
+    @PutMapping("/confirm/{snippetId}")
+    public ResponseEntity confirmRendering(@PathVariable String snippetId){
+        Snippet snippet = snippetService.selectById(snippetId);
+        Snippet updatedSnippet = confirm(snippet);
+        snippetService.update(updatedSnippet);
+        return ResponseEntity.accepted().build();
+    }
+
     @PutMapping("/{snippetId}")
     public ResponseEntity updateSnippet(@RequestBody Snippet snippet){
         snippetService.update(snippet);
@@ -95,6 +103,11 @@ public class SnippetController {
         }
         int totalVote = snippet.getNeutralAnswers()+1;
         snippet.setNeutralAnswers(totalVote);
+        return Snippet.of(snippet);
+    }
+
+    private Snippet confirm(Snippet snippet){
+        snippet.setConfirmed(true);
         return Snippet.of(snippet);
     }
 }

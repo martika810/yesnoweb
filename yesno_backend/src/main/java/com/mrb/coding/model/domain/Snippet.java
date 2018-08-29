@@ -6,6 +6,8 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 
+import static org.bouncycastle.asn1.x500.style.RFC4519Style.name;
+
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
@@ -42,6 +44,9 @@ public class Snippet implements Serializable {
 
     @Column(name= "noAnswers")
     private int noAnswers;
+
+    @Column(name="confirmed")
+    private boolean confirmed;
 
     public Snippet(String id) {
         this.id = id;
@@ -111,6 +116,14 @@ public class Snippet implements Serializable {
         this.noAnswers = noAnswers;
     }
 
+    public boolean getConfirmed() {
+        return confirmed;
+    }
+
+    public void setConfirmed(boolean confirmed) {
+        this.confirmed = confirmed;
+    }
+
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(this).omitNullValues()
@@ -122,6 +135,7 @@ public class Snippet implements Serializable {
                 .add("yesAnswers", yesAnswers)
                 .add("neutralAnswers", neutralAnswers)
                 .add("noAnswers", noAnswers)
+                .add("confirmed", confirmed)
                 .toString();
     }
 
@@ -134,6 +148,7 @@ public class Snippet implements Serializable {
         newSnippet.setYesAnswers(snippet.getYesAnswers());
         newSnippet.setNeutralAnswers(snippet.getNeutralAnswers());
         newSnippet.setNoAnswers(snippet.getNoAnswers());
+        newSnippet.setConfirmed(snippet.getConfirmed());
         return newSnippet;
     }
 }
