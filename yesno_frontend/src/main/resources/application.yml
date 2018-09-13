@@ -3,6 +3,7 @@ server:
 zuul:
   ignoredPatterns:
     - /public/**
+    - /widgets/**
   routes:
     oauth:
       path: /oauth/**
@@ -10,6 +11,9 @@ zuul:
     snippet:
       path: /snippet/**
       url: http://localhost:5000/snippet
+    html:
+      path: /html/**
+      url: http://localhost:5000/html
   Servlet30WrapperFilter:
     pre:
       disable:true

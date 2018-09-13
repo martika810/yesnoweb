@@ -11,7 +11,7 @@ menuApp.controller('menuController',function($scope,$http,$location,$cookies){
         //obtainAccessToken($scope.refreshData);
         console.log("there is noooo access token");
         $scope.isLoggedIn = false;
-        window.location.href = "login";
+        window.location.href = "../login";
     }
     $scope.displayContributeForm = function(){
         $http.get(hostUrl+'/sign/contribute_form.html')

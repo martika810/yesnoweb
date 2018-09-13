@@ -9,23 +9,25 @@ CREATE TABLE snippet (
   yesAnswers NUMBER,
   neutralAnswers NUMBER,
   noAnswers NUMBER,
+  confirmed BOOLEAN,
+  sourceSite VARCHAR(24),
   createdtime TIMESTAMP default now()
 );
 
-INSERT INTO snippet (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers)
-VALUES ('1', 'Howto infrastructure page', 1,'Was this page useful?','default',1,2,3);
+INSERT INTO snippet (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed)
+VALUES ('1', 'Howto infrastructure page', 1,'Was this page useful?','default',1,2,3,TRUE);
 
-INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers)
-VALUES ('2', 'Training page about something ', 1,'Did you find this page useful?','default',4,5,6);
+INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed)
+VALUES ('2', 'Training page about something ', 1,'Did you find this page useful?','default',4,5,6,FALSE);
 
-INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers)
-VALUES ('3', 'java position and specification', 1,'Did you find this page useful?','default',7,8,9);
+INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed)
+VALUES ('3', 'java position and specification', 1,'Did you find this page useful?','default',7,8,9,FALSE);
 
-INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers)
-VALUES ('4', 'Blog page about react', 1,'Did you find this page useful?','default',10,11,12);
+INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed)
+VALUES ('4', 'Blog page about react', 1,'Did you find this page useful?','default',10,11,12,FALSE);
 
-INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers)
-VALUES ('5', 'Blog page about react and differences', 1,'Did you find this page useful?','default',13,14,15);
+INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed)
+VALUES ('5', 'Blog page about react and differences', 1,'Did you find this page useful?','default',13,14,15,FALSE);
 
 DROP TABLE IF EXISTS groups;
 

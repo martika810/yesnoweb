@@ -51,8 +51,10 @@ public class SnippetController {
     }
 
     @PutMapping("/confirm/{snippetId}")
-    public ResponseEntity confirmRendering(@PathVariable String snippetId){
+    public ResponseEntity confirmRendering(@PathVariable String snippetId,
+                                           @RequestBody String sourceSite){
         Snippet snippet = snippetService.selectById(snippetId);
+        snippet.setSourceSite(sourceSite);
         Snippet updatedSnippet = confirm(snippet);
         snippetService.update(updatedSnippet);
         return ResponseEntity.accepted().build();
@@ -80,7 +82,7 @@ public class SnippetController {
 
     @GetMapping("/html/{snippetId}")
     public ResponseEntity<HtmlSnippet> getHtmlSnippet(@PathVariable String snippetId){
-        HtmlSnippet html=new HtmlSnippet(snippetService.getHtmlSnippet(snippetId));
+        HtmlSnippet html=new HtmlSnippet(snippetService.getHtmlWrapperSnippet(snippetId));
         return ResponseEntity.ok(html);
     }
 

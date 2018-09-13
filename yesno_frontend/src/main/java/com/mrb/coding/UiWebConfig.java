@@ -44,4 +44,5 @@ public class UiWebConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/**").addResourceLocations(CLASSPATH_RESOURCE_LOCATIONS);
     }
 
+
 }

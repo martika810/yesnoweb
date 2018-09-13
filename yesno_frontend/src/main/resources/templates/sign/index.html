@@ -217,14 +217,17 @@
                                 <div class="col-8">
                                     <input type="text" name="text-input" ng-keypress="saveDataSnippet($event)" value="{{snippet.data}}" placeholder="Text" class="form-control">
                                 </div>
-                                <div class="col-4">
+                                <div class="col-3">
                                     <i class="fa fa-check-circle"></i>
                                     <span class="metric-number">{{snippet.yesAnswers}}</span>
                                     <i class="fa fa-meh-o"></i>
                                     <span class="metric-number">{{snippet.neutralAnswers}}</span>
                                     <i class="fa fa-times-circle"></i>
                                     <span class="metric-number">{{snippet.noAnswers}}</span>
-                                    <div class="chart-wrapper px-0" height="70"/>
+
+                                </div>
+                                <div class="col-1" ng-if="snippet.confirmed" >
+                                    <i style="font-size:48px;color:green" class="fa fa-check-square"></i>
                                 </div>
                             </div>
                         </div>

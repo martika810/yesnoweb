@@ -38,7 +38,7 @@ app.controller('loginController', function($scope,$resource,$http,$httpParamSeri
         	//obtainAccessToken($scope.refreshData);
         	console.log("there is noooo access token");
             $scope.isLoggedIn = false;
-            window.location.href = "login";
+            window.location.href = $location.host +"/login";
         }
     }
     
@@ -86,7 +86,7 @@ app.controller('loginController', function($scope,$resource,$http,$httpParamSeri
                 window.location.href="sign/index";
             },function(){
                 console.log("error");
-                window.location.href = "login";
+                window.location.href = $location.host +"/login";
             }
         );
     }

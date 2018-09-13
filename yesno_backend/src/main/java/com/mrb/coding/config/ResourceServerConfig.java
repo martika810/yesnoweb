@@ -15,5 +15,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
 
         http.authorizeRequests().antMatchers("/snippet/group/listall").permitAll();
         http.authorizeRequests().antMatchers("/snippet/listall").permitAll();
+        http.headers().frameOptions().disable();
     }
 }

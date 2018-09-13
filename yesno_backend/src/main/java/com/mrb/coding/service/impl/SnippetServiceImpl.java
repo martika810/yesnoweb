@@ -1,29 +1,57 @@
 package com.mrb.coding.service.impl;
 
 import com.google.common.collect.Lists;
+import com.google.common.io.Resources;
 import com.mrb.coding.mapper.SnippetRepository;
 import com.mrb.coding.model.domain.Snippet;
+import com.mrb.coding.model.domain.WidgetType;
 import com.mrb.coding.service.SnippetService;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 
 @Service("snippetService")
 public class SnippetServiceImpl implements SnippetService {
 
+    private static final String WRAPPER_WIDGET_TEMPLATES_PATH = "/widget-wrapper/";
+    private static final String WIDGET_TEMPLATES_PATH = "/widget-wrapper/widgets/";
+    private static final String PLACEHOLDER_START_SYMBOL = "{";
+    private static final String PLACEHOLDER_END_SYMBOL = "}";
+
     @Autowired
     SnippetRepository repository;
 
     @Override
-    public String getHtmlSnippet(String snippetId) {
-        String html=
-            "<div class=\"feedback-wrapper\" style=\"\">"+
-                "<iframe id=\"frame-form\" src=\"http://localhost:8087/snippet-hello.html\" name=\"feedback_iframe_a\" "+
-                    "frameBorder=\"0\" style=\"width:240px; height:170px;padding:5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); align-content: center\">" +
-                "</iframe>"+
-            "</div>";
+    public String getHtmlWrapperSnippet(String snippetId) {
+        String html= readFile(WRAPPER_WIDGET_TEMPLATES_PATH + "wrapper.html");
+        html = html.replace(PLACEHOLDER_START_SYMBOL + "widget_type"+ PLACEHOLDER_END_SYMBOL, WidgetType.YES_NO.getHtml());
+        html = html.replace(PLACEHOLDER_START_SYMBOL + "widgetId"+ PLACEHOLDER_END_SYMBOL, snippetId);
         return html;
+    }
+
+    @Override
+    public String getHtmlInsideWidget(Snippet snippet) {
+        String html= readFile(WIDGET_TEMPLATES_PATH + "yes-no-widget.html");
+        html = html.replace(PLACEHOLDER_START_SYMBOL + "widgetId"+ PLACEHOLDER_END_SYMBOL, snippet.getId());
+        html = html.replace(PLACEHOLDER_START_SYMBOL + "question"+ PLACEHOLDER_END_SYMBOL, snippet.getData());
+        return html;
+    }
+
+    private String readFile(String fullFilePath){
+        try {
+            return FileUtils.readFileToString(new File(getClass().getResource(fullFilePath).getPath()),"UTF-8");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override

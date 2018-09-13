@@ -4,9 +4,11 @@ import com.mrb.coding.model.domain.Snippet;
 
 import java.util.List;
 
-public interface SnippetService{
+public interface  SnippetService{
 
-    String getHtmlSnippet(String snippetId);
+    String getHtmlWrapperSnippet(String snippetId);
+
+    String getHtmlInsideWidget(Snippet snippet);
 
     List<Snippet> selectAllOrderByCreated();
 

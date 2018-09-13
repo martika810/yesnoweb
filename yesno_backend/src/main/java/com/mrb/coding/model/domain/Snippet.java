@@ -48,6 +48,9 @@ public class Snippet implements Serializable {
     @Column(name="confirmed")
     private boolean confirmed;
 
+    @Column(name="sourceSite")
+    private String sourceSite;
+
     public Snippet(String id) {
         this.id = id;
     }
@@ -123,6 +126,16 @@ public class Snippet implements Serializable {
     public void setConfirmed(boolean confirmed) {
         this.confirmed = confirmed;
     }
+
+    public String getSourceSite() {
+        return sourceSite;
+    }
+
+    public void setSourceSite(String sourceSite) {
+        this.sourceSite = sourceSite;
+    }
+
+
 
     @Override
     public String toString() {
