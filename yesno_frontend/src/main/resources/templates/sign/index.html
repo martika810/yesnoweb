@@ -214,10 +214,10 @@
                                 </div>
                             </div>
                             <div class="row form-group">
-                                <div class="col-8">
+                                <div class="col-7">
                                     <input type="text" name="text-input" ng-keypress="saveDataSnippet($event)" value="{{snippet.data}}" placeholder="Text" class="form-control">
                                 </div>
-                                <div class="col-3">
+                                <div class="col-2">
                                     <i class="fa fa-check-circle"></i>
                                     <span class="metric-number">{{snippet.yesAnswers}}</span>
                                     <i class="fa fa-meh-o"></i>
@@ -228,6 +228,10 @@
                                 </div>
                                 <div class="col-1" ng-if="snippet.confirmed" >
                                     <i style="font-size:48px;color:green" class="fa fa-check-square"></i>
+                                </div>
+                                <div class="col-2" ng-if="snippet.confirmed">
+                                    <div><span>{{snippet.sourceSite}}</span></div>
+                                    <span>Last viewed: {{snippet.lastRenderedDate}}</span>
                                 </div>
                             </div>
                         </div>

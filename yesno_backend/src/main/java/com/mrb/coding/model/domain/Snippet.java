@@ -2,9 +2,13 @@ package com.mrb.coding.model.domain;
 
 import com.google.common.base.MoreObjects;
 import lombok.*;
+import net.sf.cglib.core.Local;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Timestamp;
+import java.time.LocalDate;
 
 import static org.bouncycastle.asn1.x500.style.RFC4519Style.name;
 
@@ -50,6 +54,13 @@ public class Snippet implements Serializable {
 
     @Column(name="sourceSite")
     private String sourceSite;
+
+    @Column(name="lastRenderedDate")
+    private LocalDate lastRenderedDate;
+
+    @Column(name="updatedTime")
+    @UpdateTimestamp
+    private LocalDate updatedTime;
 
     public Snippet(String id) {
         this.id = id;
@@ -135,6 +146,13 @@ public class Snippet implements Serializable {
         this.sourceSite = sourceSite;
     }
 
+    public LocalDate getLastRenderedDate(){
+        return this.lastRenderedDate;
+    }
+
+    public void setLastRenderedDate(LocalDate lastRenderedDate){
+        this.lastRenderedDate = lastRenderedDate;
+    }
 
 
     @Override
@@ -149,6 +167,7 @@ public class Snippet implements Serializable {
                 .add("neutralAnswers", neutralAnswers)
                 .add("noAnswers", noAnswers)
                 .add("confirmed", confirmed)
+                .add("lastRenderedDate", lastRenderedDate)
                 .toString();
     }
 
@@ -162,6 +181,7 @@ public class Snippet implements Serializable {
         newSnippet.setNeutralAnswers(snippet.getNeutralAnswers());
         newSnippet.setNoAnswers(snippet.getNoAnswers());
         newSnippet.setConfirmed(snippet.getConfirmed());
+        newSnippet.setLastRenderedDate(snippet.getLastRenderedDate());
         return newSnippet;
     }
 }

@@ -14,6 +14,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
@@ -110,6 +111,7 @@ public class SnippetController {
 
     private Snippet confirm(Snippet snippet){
         snippet.setConfirmed(true);
+        snippet.setLastRenderedDate(LocalDate.now());
         return Snippet.of(snippet);
     }
 }

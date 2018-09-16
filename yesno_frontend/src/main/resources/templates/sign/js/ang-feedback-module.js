@@ -6,7 +6,8 @@ widgetApp.controller('widgetController',function($scope,$http,$location){
         var sourceUrl = $location.host;
         var widgetId = document.getElementById('widgetPanel').getAttribute('data-widget-id');
         var config = {headers:  {"Content-Type" : 'application/json'}};
-        $http.put(hostUrl+'/snippet/confirm/'+widgetId,JSON.stringify(sourceUrl),config)
+        var sourceSiteUrl = $location.host();
+        $http.put(hostUrl+'/snippet/confirm/'+widgetId,sourceUrl,config)
             .then(function(response){
                 console.log('confirmation sent successfully');
             });
