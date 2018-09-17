@@ -1,5 +1,6 @@
 package com.mrb.coding.config;
 
+import com.mrb.coding.service.impl.AppUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,6 +32,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
+
+    @Bean
+    public AppUserDetailsService userDetailsService(){
+        return new AppUserDetailsService();
+    }
+
 
     @Override
     protected void configure(final HttpSecurity http) throws Exception {

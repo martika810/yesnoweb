@@ -116,7 +116,7 @@ app.controller('loginController', function($scope,$resource,$http,$httpParamSeri
 			    $cookies.remove("access_token");
                 $cookies.remove("validity");
                 $cookies.remove("remember");
-			    window.location.href="login";
+			    window.location.href= $location.host +"/login";
             },function(){
                 console.log("error");
             }
