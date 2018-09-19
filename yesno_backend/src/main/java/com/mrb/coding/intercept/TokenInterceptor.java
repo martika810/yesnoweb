@@ -9,10 +9,10 @@ public class TokenInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String tokenHeader=request.getHeader("token");
-        if(tokenHeader!=null){
+        //if(tokenHeader!=null){
             return true;
-        }
-        return false;
+        //}
+        //return false;
     }
 
 }

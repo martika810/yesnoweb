@@ -5,6 +5,7 @@ import com.mrb.coding.mapper.GroupRepository;
 import com.mrb.coding.model.domain.Group;
 import com.mrb.coding.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +18,6 @@ public class GroupServiceImpl implements GroupService {
 
     @Override
     public List<Group> selectAllOrderByCreated() {
-        return Lists.newArrayList(repository.findAll());
+        return repository.findAll(new Sort(Sort.Direction.DESC, "updatedTime"));
     }
 }

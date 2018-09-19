@@ -8,6 +8,7 @@ import com.mrb.coding.model.domain.WidgetType;
 import com.mrb.coding.service.SnippetService;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -57,7 +58,7 @@ public class SnippetServiceImpl implements SnippetService {
     @Override
     public List<Snippet> selectAllOrderByCreated() {
 
-       return Lists.newArrayList(repository.findAll());
+       return Lists.newArrayList(repository.findAll(new Sort(Sort.Direction.DESC, "updatedTime")));
 
     }
 

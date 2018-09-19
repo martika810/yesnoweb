@@ -2,9 +2,12 @@ package com.mrb.coding.model.domain;
 
 import com.google.common.base.MoreObjects;
 import lombok.*;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
@@ -23,6 +26,10 @@ public class Group implements Serializable {
 
     @Column(name = "name")
     private String name;
+
+    @Column(name="updatedTime")
+    @UpdateTimestamp
+    private LocalDateTime updatedTime;
 
     public Group(String id) {
         this.id = id;

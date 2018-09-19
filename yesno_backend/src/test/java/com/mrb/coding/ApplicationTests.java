@@ -7,16 +7,26 @@ import com.mrb.coding.model.domain.Snippet;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.security.oauth2.common.util.JacksonJsonParser;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+
+import java.util.UUID;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+@SpringBootTest
 @AutoConfigureMockMvc
 public class ApplicationTests extends SpringBaseTest {
 
@@ -48,7 +58,7 @@ public class ApplicationTests extends SpringBaseTest {
         Snippet expectedSnippet = createMockSnippet();
 
 
-        MockHttpServletRequestBuilder voteRequest = put("/snippet/vote/5")
+        MockHttpServletRequestBuilder voteRequest = put("/snippet/vote/4")
                 .header("token","123")
                 .content("\"yes\"")
                 .contentType(MediaType.APPLICATION_JSON);
@@ -56,7 +66,7 @@ public class ApplicationTests extends SpringBaseTest {
                 .andDo(print())
                 .andExpect(status().isAccepted());
 
-        mockMvc.perform(get("/snippet/get/5").header("token","123"))
+        mockMvc.perform(get("/snippet/get/4").header("token","123"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id",is(expectedSnippet.getId())))
@@ -73,7 +83,8 @@ public class ApplicationTests extends SpringBaseTest {
 
     @Test
     public void createSnippet() throws Exception {
-        Snippet newSnippet= createMockSnippet();
+        Snippet newSnippet= createNewMockSnippet();
+        newSnippet.setId(UUID.randomUUID().toString());
         ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
         String json = ow.writeValueAsString(newSnippet);
         mockMvc.perform(post("/snippet/create")
@@ -97,15 +108,32 @@ public class ApplicationTests extends SpringBaseTest {
     }
 
     private Snippet createMockSnippet(){
-        Snippet expectedSnippet = new Snippet("5");
-        expectedSnippet.setNote("Blog page about react and differences");
+        Snippet expectedSnippet = new Snippet();
+        expectedSnippet.setId("4");
+        expectedSnippet.setNote("Blog page about react");
         expectedSnippet.setTemplateId("1");
         expectedSnippet.setData("Did you find this page useful?");
-        expectedSnippet.setYesAnswers(13);
-        expectedSnippet.setNeutralAnswers(14);
-        expectedSnippet.setNoAnswers(15);
+        expectedSnippet.setYesAnswers(10);
+        expectedSnippet.setNeutralAnswers(11);
+        expectedSnippet.setNoAnswers(12);
         expectedSnippet.setGroup("default");
+        expectedSnippet.setConfirmed(false);
         return expectedSnippet;
+
+    }
+
+    private Snippet createNewMockSnippet(){
+        Snippet expectedSnippet = new Snippet();
+        expectedSnippet.setNote("Blog page about react");
+        expectedSnippet.setTemplateId("1");
+        expectedSnippet.setData("Did you find this page useful?");
+        expectedSnippet.setYesAnswers(10);
+        expectedSnippet.setNeutralAnswers(11);
+        expectedSnippet.setNoAnswers(12);
+        expectedSnippet.setGroup("default");
+        expectedSnippet.setConfirmed(false);
+        return expectedSnippet;
+
     }
 
     private Group createGroup(){
@@ -114,5 +142,26 @@ public class ApplicationTests extends SpringBaseTest {
         return group;
     }
 
+    private String obtainAccessToken(String username, String password) throws Exception {
+
+        MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
+        params.add("grant_type", "password");
+        params.add("client_id", "fooClientIdPassword");
+        params.add("username", username);
+        params.add("password", password);
+
+        ResultActions result
+                = mockMvc.perform(post("/oauth/token")
+                .params(params)
+                .with(httpBasic("fooClientIdPassword","secret"))
+                .accept("application/json;charset=UTF-8"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/json;charset=UTF-8"));
+
+        String resultString = result.andReturn().getResponse().getContentAsString();
+
+        JacksonJsonParser jsonParser = new JacksonJsonParser();
+        return jsonParser.parseMap(resultString).get("access_token").toString();
+    }
 
 }

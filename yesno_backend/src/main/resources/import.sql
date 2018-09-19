@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS snippet;
 
 CREATE TABLE snippet (
-  id      VARCHAR(16) PRIMARY KEY ,
+  id      VARCHAR(16) IDENTITY NOT NULL ,
   note    VARCHAR(64),
   templateId   VARCHAR(24),
   data VARCHAR(64),
@@ -25,23 +25,20 @@ INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAns
 VALUES ('3', 'java position and specification', 1,'Did you find this page useful?','default',7,8,9,FALSE,now());
 
 INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed,updatedTime)
-VALUES ('4', 'Blog page about react', 1,'Did you find this page useful?','default',10,11,12,FALSE,now());
-
-INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed,updatedTime)
-VALUES ('5', 'Blog page about react and differences', 1,'Did you find this page useful?','default',13,14,15,FALSE,now());
+VALUES ('4', 'Blog page about react', 1,'Did you find this page useful?','default',10,11,12,FALSE,now()+1);
 
 DROP TABLE IF EXISTS groups;
 
 CREATE TABLE groups (
   id      VARCHAR(24) PRIMARY KEY ,
   name    VARCHAR(35),
-  createdtime TIMESTAMP
+  updatedTime TIMESTAMP
 );
 
-INSERT INTO groups  (id, name,createdtime)
-VALUES ('default', 'Default',now());
+INSERT INTO groups  (id, name,updatedTime)
+VALUES ('default', 'Default',{ts '2012-09-17 18:47:52.69'});
 
-INSERT INTO groups  (id, name,createdtime)
+INSERT INTO groups  (id, name,updatedTime)
 VALUES ('group1', 'Group 1',now());
 
 drop table if exists oauth_client_details;

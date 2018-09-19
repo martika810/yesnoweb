@@ -9,6 +9,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import static org.bouncycastle.asn1.x500.style.RFC4519Style.name;
 
@@ -60,11 +61,8 @@ public class Snippet implements Serializable {
 
     @Column(name="updatedTime")
     @UpdateTimestamp
-    private LocalDate updatedTime;
+    private LocalDateTime updatedTime;
 
-    public Snippet(String id) {
-        this.id = id;
-    }
 
     public String getId() {
         return id;
@@ -172,7 +170,8 @@ public class Snippet implements Serializable {
     }
 
     public static Snippet of(Snippet snippet){
-        Snippet newSnippet = new Snippet(snippet.getId());
+        Snippet newSnippet = new Snippet();
+        newSnippet.setId(snippet.getId());
         newSnippet.setNote(snippet.getNote());
         newSnippet.setTemplateId(snippet.getTemplateId());
         newSnippet.setData(snippet.getData());
