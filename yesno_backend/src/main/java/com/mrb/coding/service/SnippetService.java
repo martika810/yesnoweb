@@ -12,6 +12,8 @@ public interface  SnippetService{
 
     List<Snippet> selectAllOrderByCreated();
 
+    List<Snippet> selectAllByAccountIdOrderByCreated(String accountId);
+
     Snippet selectById(String id);
 
     void update(Snippet snippet);

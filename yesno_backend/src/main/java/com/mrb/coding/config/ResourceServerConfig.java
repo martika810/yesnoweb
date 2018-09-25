@@ -14,7 +14,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
     public void configure(HttpSecurity http) throws Exception {
 
         http.authorizeRequests().antMatchers("/snippet/group/listall").permitAll();
-        http.authorizeRequests().antMatchers("/snippet/listall").permitAll();
+        http.authorizeRequests().antMatchers("/snippet/listall").authenticated();
         http.headers().frameOptions().disable();
     }
 }

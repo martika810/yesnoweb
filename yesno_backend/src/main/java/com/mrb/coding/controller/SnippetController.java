@@ -37,7 +37,7 @@ public class SnippetController {
 
     @GetMapping("/listall")
     public ResponseEntity<List<Snippet>> getAll() {
-        List<Snippet> list = snippetService.selectAllOrderByCreated();
+        List<Snippet> list = snippetService.selectAllByAccountIdOrderByCreated("123");
         return ResponseEntity.ok(list);
     }
 

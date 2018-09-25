@@ -53,6 +53,9 @@ public class Snippet implements Serializable {
     @Column(name="confirmed")
     private boolean confirmed;
 
+    @Column(name="accountId")
+    private String accountId;
+
     @Column(name="sourceSite")
     private String sourceSite;
 
@@ -152,6 +155,13 @@ public class Snippet implements Serializable {
         this.lastRenderedDate = lastRenderedDate;
     }
 
+    public String getAccountId(){
+        return this.accountId;
+    }
+    public void setAccountId(String accountId){
+        this.accountId = accountId;
+    }
+
 
     @Override
     public String toString() {
@@ -166,6 +176,7 @@ public class Snippet implements Serializable {
                 .add("noAnswers", noAnswers)
                 .add("confirmed", confirmed)
                 .add("lastRenderedDate", lastRenderedDate)
+                .add("accountId", accountId)
                 .toString();
     }
 
@@ -181,6 +192,7 @@ public class Snippet implements Serializable {
         newSnippet.setNoAnswers(snippet.getNoAnswers());
         newSnippet.setConfirmed(snippet.getConfirmed());
         newSnippet.setLastRenderedDate(snippet.getLastRenderedDate());
+        newSnippet.setAccountId(snippet.getAccountId());
         return newSnippet;
     }
 }

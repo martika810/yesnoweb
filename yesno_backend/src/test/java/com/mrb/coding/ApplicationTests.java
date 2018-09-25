@@ -37,10 +37,12 @@ public class ApplicationTests extends SpringBaseTest {
 
     @Test
     public void loadAllSnippets() throws Exception {
+
+        String accessToken = obtainAccessToken("john","123");
         Snippet expectedSnippet = createMockSnippet();
 
         mockMvc.perform(get("/snippet/listall")
-                            .header("token","123"))
+                            .header("Authorization", "Bearer " + accessToken))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.[0].id",is(expectedSnippet.getId())))

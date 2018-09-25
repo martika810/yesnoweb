@@ -1,3 +1,15 @@
+DROP TABLE IF EXISTS app_account;
+
+CREATE TABLE app_account(
+    id VARCHAR(16) IDENTITY NOT NULL ,
+    firstName VARCHAR(24),
+    lastName VARCHAR(24),
+    username VARCHAR(24)
+);
+
+INSERT INTO app_account(id,firstName,lastName,username)
+VALUES('123','John','Taylor','john');
+
 DROP TABLE IF EXISTS snippet;
 
 CREATE TABLE snippet (
@@ -12,20 +24,21 @@ CREATE TABLE snippet (
   confirmed BOOLEAN,
   sourceSite VARCHAR(24),
   lastRenderedDate TIMESTAMP,
-  updatedTime TIMESTAMP
+  updatedTime TIMESTAMP,
+  accountId VARCHAR(24)
 );
 
-INSERT INTO snippet (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed,updatedTime)
-VALUES ('1', 'Howto infrastructure page', 1,'Was this page useful?','default',1,2,3,FALSE,now());
+INSERT INTO snippet (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed,updatedTime,accountId)
+VALUES ('1', 'Howto infrastructure page', 1,'Was this page useful?','default',1,2,3,FALSE,now(),'123');
 
-INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed,updatedTime)
-VALUES ('2', 'Training page about something ', 1,'Did you find this page useful?','default',4,5,6,FALSE,now());
+INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed,updatedTime,accountId)
+VALUES ('2', 'Training page about something ', 1,'Did you find this page useful?','default',4,5,6,FALSE,now(),'123');
 
-INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed,updatedTime)
-VALUES ('3', 'java position and specification', 1,'Did you find this page useful?','default',7,8,9,FALSE,now());
+INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed,updatedTime,accountId)
+VALUES ('3', 'java position and specification', 1,'Did you find this page useful?','default',7,8,9,FALSE,now(),'123');
 
-INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed,updatedTime)
-VALUES ('4', 'Blog page about react', 1,'Did you find this page useful?','default',10,11,12,FALSE,now()+1);
+INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed,updatedTime,accountId)
+VALUES ('4', 'Blog page about react', 1,'Did you find this page useful?','default',10,11,12,FALSE,now()+1,'123');
 
 DROP TABLE IF EXISTS groups;
 

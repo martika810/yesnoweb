@@ -63,6 +63,12 @@ public class SnippetServiceImpl implements SnippetService {
     }
 
     @Override
+    public List<Snippet> selectAllByAccountIdOrderByCreated(String accountId) {
+        return repository.findByAccountId(accountId);
+    }
+
+
+    @Override
     public Snippet selectById(String id) {
         return repository.findById(id).get();
     }
