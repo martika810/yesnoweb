@@ -1,16 +1,14 @@
 server:
   port: 5000
 
-debug: true
-
 logging:
   level:
     root: info
-    org.mybatis: debug
-    org.springframework: debug
-    org.springframework.jdbc: debug
-    com.github.trang: debug
-    com.mrb.coding: debug
+    org.mybatis: info
+    org.springframework: info
+    org.springframework.jdbc: info
+    com.github.trang: info
+    com.mrb.coding: info
 
 spring:
   profiles:

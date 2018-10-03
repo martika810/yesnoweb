@@ -1,0 +1,552 @@
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE APP_ACCOUNT( [*]"; expected "identifier"; SQL statement:
+CREATE TABLE app_account( [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ID[*] VARCHAR(16) IDENTITY NOT NULL , "; expected "INSERT, {"; SQL statement:
+id VARCHAR(16) IDENTITY NOT NULL , [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "FIRSTNAME[*] VARCHAR(24), "; expected "FROM, {"; SQL statement:
+firstName VARCHAR(24), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "LASTNAME[*] VARCHAR(24), "; SQL statement:
+lastName VARCHAR(24), [42000-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "USERNAME[*] VARCHAR(24) "; expected "UPDATE, USE, {"; SQL statement:
+username VARCHAR(24) [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "APP_ACCOUNT" not found; SQL statement:
+INSERT INTO app_account(id,firstName,lastName,username) [42102-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE SNIPPET ( [*]"; expected "identifier"; SQL statement:
+CREATE TABLE snippet ( [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ID[*]      VARCHAR(16) IDENTITY NOT NULL , "; expected "INSERT, {"; SQL statement:
+id      VARCHAR(16) IDENTITY NOT NULL , [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "NOTE[*]    VARCHAR(64), "; SQL statement:
+note    VARCHAR(64), [42000-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "TEMPLATEID[*]   VARCHAR(24), "; expected "TRUNCATE, {"; SQL statement:
+templateId   VARCHAR(24), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DATA[*] VARCHAR(64), "; expected "DELETE, DROP, DECLARE, DEALLOCATE, {"; SQL statement:
+data VARCHAR(64), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "GROUPNAME[*] VARCHAR(24), "; expected "GRANT, {"; SQL statement:
+groupname VARCHAR(24), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "YESANSWERS[*] NUMBER, "; SQL statement:
+yesAnswers NUMBER, [42000-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "NEUTRALANSWERS[*] NUMBER, "; SQL statement:
+neutralAnswers NUMBER, [42000-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "NOANSWERS[*] NUMBER, "; SQL statement:
+noAnswers NUMBER, [42000-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CONFIRMED[*] BOOLEAN, "; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+confirmed BOOLEAN, [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SOURCESITE[*] VARCHAR(24), "; expected "SELECT, SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW, {"; SQL statement:
+sourceSite VARCHAR(24), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "LASTRENDEREDDATE[*] TIMESTAMP, "; SQL statement:
+lastRenderedDate TIMESTAMP, [42000-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATEDTIME[*] TIMESTAMP, "; expected "UPDATE, USE, {"; SQL statement:
+updatedTime TIMESTAMP, [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ACCOUNTID[*] VARCHAR(24) "; expected "ALTER, ANALYZE, {"; SQL statement:
+accountId VARCHAR(24) [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SNIPPET" not found; SQL statement:
+INSERT INTO snippet (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed,updatedTime,accountId) [42102-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SNIPPET" not found; SQL statement:
+INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed,updatedTime,accountId) [42102-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SNIPPET" not found; SQL statement:
+INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed,updatedTime,accountId) [42102-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SNIPPET" not found; SQL statement:
+INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed,updatedTime,accountId) [42102-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUPS ( [*]"; expected "identifier"; SQL statement:
+CREATE TABLE groups ( [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ID[*]      VARCHAR(24) PRIMARY KEY , "; expected "INSERT, {"; SQL statement:
+id      VARCHAR(24) PRIMARY KEY , [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "NAME[*]    VARCHAR(35), "; SQL statement:
+name    VARCHAR(35), [42000-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATEDTIME[*] TIMESTAMP "; expected "UPDATE, USE, {"; SQL statement:
+updatedTime TIMESTAMP [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "GROUPS" not found; SQL statement:
+INSERT INTO groups  (id, name,updatedTime) [42102-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "GROUPS" not found; SQL statement:
+INSERT INTO groups  (id, name,updatedTime) [42102-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE OAUTH_CLIENT_DETAILS ( [*]"; expected "identifier"; SQL statement:
+create table oauth_client_details ( [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CLIENT_ID[*] VARCHAR(255) PRIMARY KEY, "; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+client_id VARCHAR(255) PRIMARY KEY, [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "RESOURCE_IDS[*] VARCHAR(255), "; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE, REPLACE, {"; SQL statement:
+resource_ids VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CLIENT_SECRET[*] VARCHAR(255), "; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+client_secret VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SCOPE[*] VARCHAR(255), "; expected "SELECT, SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW, {"; SQL statement:
+scope VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTHORIZED_GRANT_TYPES[*] VARCHAR(255), "; expected "ALTER, ANALYZE, {"; SQL statement:
+authorized_grant_types VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "WEB_SERVER_REDIRECT_URI[*] VARCHAR(255), "; expected "WITH, {"; SQL statement:
+web_server_redirect_uri VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTHORITIES[*] VARCHAR(255), "; expected "ALTER, ANALYZE, {"; SQL statement:
+authorities VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ACCESS_TOKEN_VALIDITY[*] INTEGER, "; expected "ALTER, ANALYZE, {"; SQL statement:
+access_token_validity INTEGER, [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "REFRESH_TOKEN_VALIDITY[*] INTEGER, "; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE, REPLACE, {"; SQL statement:
+refresh_token_validity INTEGER, [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ADDITIONAL_INFORMATION[*] VARCHAR(4096), "; expected "ALTER, ANALYZE, {"; SQL statement:
+additional_information VARCHAR(4096), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTOAPPROVE[*] VARCHAR(255) "; expected "ALTER, ANALYZE, {"; SQL statement:
+autoapprove VARCHAR(255) [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE OAUTH_CLIENT_TOKEN ( [*]"; expected "identifier"; SQL statement:
+create table oauth_client_token ( [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "TOKEN_ID[*] VARCHAR(255), "; expected "TRUNCATE, {"; SQL statement:
+token_id VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "TOKEN[*] VARBINARY, "; expected "TRUNCATE, {"; SQL statement:
+token VARBINARY, [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTHENTICATION_ID[*] VARCHAR(255) PRIMARY KEY, "; expected "ALTER, ANALYZE, {"; SQL statement:
+authentication_id VARCHAR(255) PRIMARY KEY, [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "USER_NAME[*] VARCHAR(255), "; expected "UPDATE, USE, {"; SQL statement:
+user_name VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CLIENT_ID[*] VARCHAR(255) "; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+client_id VARCHAR(255) [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE OAUTH_ACCESS_TOKEN ( [*]"; expected "identifier"; SQL statement:
+create table oauth_access_token ( [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "TOKEN_ID[*] VARCHAR(255), "; expected "TRUNCATE, {"; SQL statement:
+token_id VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "TOKEN[*] VARBINARY, "; expected "TRUNCATE, {"; SQL statement:
+token VARBINARY, [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTHENTICATION_ID[*] VARCHAR(255) PRIMARY KEY, "; expected "ALTER, ANALYZE, {"; SQL statement:
+authentication_id VARCHAR(255) PRIMARY KEY, [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "USER_NAME[*] VARCHAR(255), "; expected "UPDATE, USE, {"; SQL statement:
+user_name VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CLIENT_ID[*] VARCHAR(255), "; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+client_id VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTHENTICATION[*] VARBINARY, "; expected "ALTER, ANALYZE, {"; SQL statement:
+authentication VARBINARY, [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "REFRESH_TOKEN[*] VARCHAR(255) "; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE, REPLACE, {"; SQL statement:
+refresh_token VARCHAR(255) [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE OAUTH_REFRESH_TOKEN ( [*]"; expected "identifier"; SQL statement:
+create table oauth_refresh_token ( [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "TOKEN_ID[*] VARCHAR(255), "; expected "TRUNCATE, {"; SQL statement:
+token_id VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "TOKEN[*] VARBINARY, "; expected "TRUNCATE, {"; SQL statement:
+token VARBINARY, [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTHENTICATION[*] VARBINARY "; expected "ALTER, ANALYZE, {"; SQL statement:
+authentication VARBINARY [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE OAUTH_CODE ( [*]"; expected "identifier"; SQL statement:
+create table oauth_code ( [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CODE[*] VARCHAR(255), "; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+code VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTHENTICATION[*] VARBINARY "; expected "ALTER, ANALYZE, {"; SQL statement:
+authentication VARBINARY [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE OAUTH_APPROVALS ( [*]"; expected "identifier"; SQL statement:
+create table oauth_approvals ( [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "USERID[*] VARCHAR(255), "; expected "UPDATE, USE, {"; SQL statement:
+userId VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CLIENTID[*] VARCHAR(255), "; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+clientId VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SCOPE[*] VARCHAR(255), "; expected "SELECT, SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW, {"; SQL statement:
+scope VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "STATUS[*] VARCHAR(10), "; expected "SELECT, SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW, {"; SQL statement:
+status VARCHAR(10), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "EXPIRESAT[*] TIMESTAMP, "; expected "EXPLAIN, EXECUTE, {"; SQL statement:
+expiresAt TIMESTAMP, [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "LASTMODIFIEDAT[*] TIMESTAMP "; SQL statement:
+lastModifiedAt TIMESTAMP [42000-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE CLIENTDETAILS ( [*]"; expected "identifier"; SQL statement:
+create table ClientDetails ( [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "APPID[*] VARCHAR(255) PRIMARY KEY, "; expected "ALTER, ANALYZE, {"; SQL statement:
+appId VARCHAR(255) PRIMARY KEY, [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "RESOURCEIDS[*] VARCHAR(255), "; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE, REPLACE, {"; SQL statement:
+resourceIds VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "APPSECRET[*] VARCHAR(255), "; expected "ALTER, ANALYZE, {"; SQL statement:
+appSecret VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SCOPE[*] VARCHAR(255), "; expected "SELECT, SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW, {"; SQL statement:
+scope VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "GRANTTYPES[*] VARCHAR(255), "; expected "GRANT, {"; SQL statement:
+grantTypes VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "REDIRECTURL[*] VARCHAR(255), "; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE, REPLACE, {"; SQL statement:
+redirectUrl VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTHORITIES[*] VARCHAR(255), "; expected "ALTER, ANALYZE, {"; SQL statement:
+authorities VARCHAR(255), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ACCESS_TOKEN_VALIDITY[*] INTEGER, "; expected "ALTER, ANALYZE, {"; SQL statement:
+access_token_validity INTEGER, [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "REFRESH_TOKEN_VALIDITY[*] INTEGER, "; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE, REPLACE, {"; SQL statement:
+refresh_token_validity INTEGER, [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ADDITIONALINFORMATION[*] VARCHAR(4096), "; expected "ALTER, ANALYZE, {"; SQL statement:
+additionalInformation VARCHAR(4096), [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTOAPPROVESCOPES[*] VARCHAR(255) "; expected "ALTER, ANALYZE, {"; SQL statement:
+autoApproveScopes VARCHAR(255) [42001-197]
+2018-10-03 11:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE APP_ACCOUNT( [*]"; expected "identifier"; SQL statement:
+CREATE TABLE app_account( [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ID[*] VARCHAR(16) IDENTITY NOT NULL , "; expected "INSERT, {"; SQL statement:
+id VARCHAR(16) IDENTITY NOT NULL , [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "FIRSTNAME[*] VARCHAR(24), "; expected "FROM, {"; SQL statement:
+firstName VARCHAR(24), [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "LASTNAME[*] VARCHAR(24), "; SQL statement:
+lastName VARCHAR(24), [42000-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "USERNAME[*] VARCHAR(24) "; expected "UPDATE, USE, {"; SQL statement:
+username VARCHAR(24) [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "APP_ACCOUNT" not found; SQL statement:
+INSERT INTO app_account(id,firstName,lastName,username) [42102-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE SNIPPET ( [*]"; expected "identifier"; SQL statement:
+CREATE TABLE snippet ( [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ID[*]      VARCHAR(16) IDENTITY NOT NULL , "; expected "INSERT, {"; SQL statement:
+id      VARCHAR(16) IDENTITY NOT NULL , [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "NOTE[*]    VARCHAR(64), "; SQL statement:
+note    VARCHAR(64), [42000-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "TEMPLATEID[*]   VARCHAR(24), "; expected "TRUNCATE, {"; SQL statement:
+templateId   VARCHAR(24), [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DATA[*] VARCHAR(64), "; expected "DELETE, DROP, DECLARE, DEALLOCATE, {"; SQL statement:
+data VARCHAR(64), [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "GROUPNAME[*] VARCHAR(24), "; expected "GRANT, {"; SQL statement:
+groupname VARCHAR(24), [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "YESANSWERS[*] NUMBER, "; SQL statement:
+yesAnswers NUMBER, [42000-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "NEUTRALANSWERS[*] NUMBER, "; SQL statement:
+neutralAnswers NUMBER, [42000-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "NOANSWERS[*] NUMBER, "; SQL statement:
+noAnswers NUMBER, [42000-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CONFIRMED[*] BOOLEAN, "; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+confirmed BOOLEAN, [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SOURCESITE[*] VARCHAR(24), "; expected "SELECT, SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW, {"; SQL statement:
+sourceSite VARCHAR(24), [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "LASTRENDEREDDATE[*] TIMESTAMP, "; SQL statement:
+lastRenderedDate TIMESTAMP, [42000-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATEDTIME[*] TIMESTAMP, "; expected "UPDATE, USE, {"; SQL statement:
+updatedTime TIMESTAMP, [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ACCOUNTID[*] VARCHAR(24) "; expected "ALTER, ANALYZE, {"; SQL statement:
+accountId VARCHAR(24) [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SNIPPET" not found; SQL statement:
+INSERT INTO snippet (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed,updatedTime,accountId) [42102-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SNIPPET" not found; SQL statement:
+INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed,updatedTime,accountId) [42102-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SNIPPET" not found; SQL statement:
+INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed,updatedTime,accountId) [42102-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SNIPPET" not found; SQL statement:
+INSERT INTO snippet  (id, note, templateId,data,groupname,yesAnswers, neutralAnswers, noAnswers,confirmed,updatedTime,accountId) [42102-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUPS ( [*]"; expected "identifier"; SQL statement:
+CREATE TABLE groups ( [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ID[*]      VARCHAR(24) PRIMARY KEY , "; expected "INSERT, {"; SQL statement:
+id      VARCHAR(24) PRIMARY KEY , [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "NAME[*]    VARCHAR(35), "; SQL statement:
+name    VARCHAR(35), [42000-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATEDTIME[*] TIMESTAMP "; expected "UPDATE, USE, {"; SQL statement:
+updatedTime TIMESTAMP [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "GROUPS" not found; SQL statement:
+INSERT INTO groups  (id, name,updatedTime) [42102-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "GROUPS" not found; SQL statement:
+INSERT INTO groups  (id, name,updatedTime) [42102-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE OAUTH_CLIENT_DETAILS ( [*]"; expected "identifier"; SQL statement:
+create table oauth_client_details ( [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CLIENT_ID[*] VARCHAR(255) PRIMARY KEY, "; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+client_id VARCHAR(255) PRIMARY KEY, [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "RESOURCE_IDS[*] VARCHAR(255), "; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE, REPLACE, {"; SQL statement:
+resource_ids VARCHAR(255), [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CLIENT_SECRET[*] VARCHAR(255), "; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+client_secret VARCHAR(255), [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SCOPE[*] VARCHAR(255), "; expected "SELECT, SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW, {"; SQL statement:
+scope VARCHAR(255), [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTHORIZED_GRANT_TYPES[*] VARCHAR(255), "; expected "ALTER, ANALYZE, {"; SQL statement:
+authorized_grant_types VARCHAR(255), [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "WEB_SERVER_REDIRECT_URI[*] VARCHAR(255), "; expected "WITH, {"; SQL statement:
+web_server_redirect_uri VARCHAR(255), [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTHORITIES[*] VARCHAR(255), "; expected "ALTER, ANALYZE, {"; SQL statement:
+authorities VARCHAR(255), [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ACCESS_TOKEN_VALIDITY[*] INTEGER, "; expected "ALTER, ANALYZE, {"; SQL statement:
+access_token_validity INTEGER, [42001-197]
+2018-10-03 13:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "REFRESH_TOKEN_VALIDITY[*] INTEGER, "; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE, REPLACE, {"; SQL statement:
+refresh_token_validity INTEGER, [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ADDITIONAL_INFORMATION[*] VARCHAR(4096), "; expected "ALTER, ANALYZE, {"; SQL statement:
+additional_information VARCHAR(4096), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTOAPPROVE[*] VARCHAR(255) "; expected "ALTER, ANALYZE, {"; SQL statement:
+autoapprove VARCHAR(255) [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE OAUTH_CLIENT_TOKEN ( [*]"; expected "identifier"; SQL statement:
+create table oauth_client_token ( [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "TOKEN_ID[*] VARCHAR(255), "; expected "TRUNCATE, {"; SQL statement:
+token_id VARCHAR(255), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "TOKEN[*] VARBINARY, "; expected "TRUNCATE, {"; SQL statement:
+token VARBINARY, [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTHENTICATION_ID[*] VARCHAR(255) PRIMARY KEY, "; expected "ALTER, ANALYZE, {"; SQL statement:
+authentication_id VARCHAR(255) PRIMARY KEY, [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "USER_NAME[*] VARCHAR(255), "; expected "UPDATE, USE, {"; SQL statement:
+user_name VARCHAR(255), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CLIENT_ID[*] VARCHAR(255) "; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+client_id VARCHAR(255) [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE OAUTH_ACCESS_TOKEN ( [*]"; expected "identifier"; SQL statement:
+create table oauth_access_token ( [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "TOKEN_ID[*] VARCHAR(255), "; expected "TRUNCATE, {"; SQL statement:
+token_id VARCHAR(255), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "TOKEN[*] VARBINARY, "; expected "TRUNCATE, {"; SQL statement:
+token VARBINARY, [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTHENTICATION_ID[*] VARCHAR(255) PRIMARY KEY, "; expected "ALTER, ANALYZE, {"; SQL statement:
+authentication_id VARCHAR(255) PRIMARY KEY, [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "USER_NAME[*] VARCHAR(255), "; expected "UPDATE, USE, {"; SQL statement:
+user_name VARCHAR(255), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CLIENT_ID[*] VARCHAR(255), "; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+client_id VARCHAR(255), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTHENTICATION[*] VARBINARY, "; expected "ALTER, ANALYZE, {"; SQL statement:
+authentication VARBINARY, [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "REFRESH_TOKEN[*] VARCHAR(255) "; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE, REPLACE, {"; SQL statement:
+refresh_token VARCHAR(255) [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE OAUTH_REFRESH_TOKEN ( [*]"; expected "identifier"; SQL statement:
+create table oauth_refresh_token ( [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "TOKEN_ID[*] VARCHAR(255), "; expected "TRUNCATE, {"; SQL statement:
+token_id VARCHAR(255), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "TOKEN[*] VARBINARY, "; expected "TRUNCATE, {"; SQL statement:
+token VARBINARY, [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTHENTICATION[*] VARBINARY "; expected "ALTER, ANALYZE, {"; SQL statement:
+authentication VARBINARY [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE OAUTH_CODE ( [*]"; expected "identifier"; SQL statement:
+create table oauth_code ( [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CODE[*] VARCHAR(255), "; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+code VARCHAR(255), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTHENTICATION[*] VARBINARY "; expected "ALTER, ANALYZE, {"; SQL statement:
+authentication VARBINARY [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE OAUTH_APPROVALS ( [*]"; expected "identifier"; SQL statement:
+create table oauth_approvals ( [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "USERID[*] VARCHAR(255), "; expected "UPDATE, USE, {"; SQL statement:
+userId VARCHAR(255), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CLIENTID[*] VARCHAR(255), "; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+clientId VARCHAR(255), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SCOPE[*] VARCHAR(255), "; expected "SELECT, SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW, {"; SQL statement:
+scope VARCHAR(255), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "STATUS[*] VARCHAR(10), "; expected "SELECT, SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW, {"; SQL statement:
+status VARCHAR(10), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "EXPIRESAT[*] TIMESTAMP, "; expected "EXPLAIN, EXECUTE, {"; SQL statement:
+expiresAt TIMESTAMP, [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "LASTMODIFIEDAT[*] TIMESTAMP "; SQL statement:
+lastModifiedAt TIMESTAMP [42000-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE CLIENTDETAILS ( [*]"; expected "identifier"; SQL statement:
+create table ClientDetails ( [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "APPID[*] VARCHAR(255) PRIMARY KEY, "; expected "ALTER, ANALYZE, {"; SQL statement:
+appId VARCHAR(255) PRIMARY KEY, [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "RESOURCEIDS[*] VARCHAR(255), "; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE, REPLACE, {"; SQL statement:
+resourceIds VARCHAR(255), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "APPSECRET[*] VARCHAR(255), "; expected "ALTER, ANALYZE, {"; SQL statement:
+appSecret VARCHAR(255), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SCOPE[*] VARCHAR(255), "; expected "SELECT, SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW, {"; SQL statement:
+scope VARCHAR(255), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "GRANTTYPES[*] VARCHAR(255), "; expected "GRANT, {"; SQL statement:
+grantTypes VARCHAR(255), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "REDIRECTURL[*] VARCHAR(255), "; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE, REPLACE, {"; SQL statement:
+redirectUrl VARCHAR(255), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTHORITIES[*] VARCHAR(255), "; expected "ALTER, ANALYZE, {"; SQL statement:
+authorities VARCHAR(255), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ACCESS_TOKEN_VALIDITY[*] INTEGER, "; expected "ALTER, ANALYZE, {"; SQL statement:
+access_token_validity INTEGER, [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "REFRESH_TOKEN_VALIDITY[*] INTEGER, "; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE, REPLACE, {"; SQL statement:
+refresh_token_validity INTEGER, [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ADDITIONALINFORMATION[*] VARCHAR(4096), "; expected "ALTER, ANALYZE, {"; SQL statement:
+additionalInformation VARCHAR(4096), [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "AUTOAPPROVESCOPES[*] VARCHAR(255) "; expected "ALTER, ANALYZE, {"; SQL statement:
+autoApproveScopes VARCHAR(255) [42001-197]
+2018-10-03 13:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-197]
