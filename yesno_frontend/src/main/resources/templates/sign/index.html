@@ -26,7 +26,10 @@
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
-   <!-- Angular -->
+    <!-- color picker bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.3/css/bootstrap-colorpicker.css" rel="stylesheet">
+
+    <!-- Angular -->
     <script src="js/vendor/jquery-2.1.4.min.js"></script>
     <!--<script type="text/javascript" src="js/lib/angular/angular.js"></script>-->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
@@ -183,8 +186,8 @@
         </div>
     </div>
 
-    <!--<div id="main-central-panel" class="content mt-3">-->
-    <div id="snippetPanel" ng-app="snippetApp" ng-controller="snippetController" class="content mt-3">
+   <!----- SNIPPET LISTING ---->
+    <section id="snippetPanel" ng-app="snippetApp" ng-controller="snippetController" class="content mt-3 sliding-section">
         <!-- LIST OF ALL SNIPPETS -->
         <div class="snippetList" ng-repeat="snippet in snippetList">
                 <div class="col-sm-6 col-lg-12">
@@ -208,6 +211,7 @@
                                             <div class="dropdown-menu-content">
                                                 <a class="dropdown-item htmlsnippet" data-toggle="modal" data-target="#displayHtmlModal" ng-click="displayHtmlSnippet(snippet.id)" data={{snippet.id}} href="#">HTML Snippet</a>
                                                 <a class="dropdown-item delete" href="#" ng-click="deleteSnippet(snippet.id)">Delete</a>
+                                                <a class="dropdown-item editsnippet" data-target="#displayHtmlEditorModal" href="#" ng-click="openSnippetEditor(snippet.id)">Open Snippet Editor</a>
                                             </div>
                                         </div>
                                     </div>
@@ -239,7 +243,7 @@
                     </div>
                 </div>
         </div>
-        <!-- HTML MODAL -->
+        <!-- HTML MODAL TO SHOW THE EMBBED HTML -->
         <div class="modal fade" id="displayHtmlModal" tabIndex="-1" role="dialog"
              aria-labelledby="mediumModalLabel" aria-hidden="true" >
             <div class="modal-dialog modal-lg" role="document">
@@ -264,9 +268,35 @@
             </div>
         </div>
 
+    </section> <!-- .content -->
+    <!----- WEB EDITOR ---->
+    <section id="snippetEditorPanel" ng-app="snippetEditorApp" ng-controller="snippetEditorController" class="content mt-3 sliding-section">
+        <div class="card">
+            <div class="card-header">
+                <ul>
+                    <li class="hidden-sm-down">
+                        <span class="menu-title">Pick color</span>
+                        <input type="color" class="menu-item" />
+                    </li>
+                    <li class="hidden-sm-down">
+                        <span class="menu-title">Position</span>
+                        <input type="color" class="menu-item" />
+                    </li>
+                    <li class="hidden-sm-down">
+                        <span class="menu-title">Answer</span>
+                        <input type="color" class="menu-item" />
+                    </li>
+                </ul>
 
-    </div> <!-- .content -->
-
+            </div>
+            <div class="card-body">
+                <h1> More stuff </h1>
+            </div>
+            <div class="card-footer">
+               <button class="search-close" ng-click="hideSnippetEditor()" type="submit"><i class="fa fa-close"></i></button>
+            </div>
+        </div>
+    </section>
 </div><!-- /#right-panel -->
 
 
@@ -275,6 +305,7 @@
 <!-- Angular application code -->
 <script type="text/javascript" src="js/ang-module-menu.js"></script>
 <script type="text/javascript" src="js/ang-module-snippet.js"></script>
+<script type="text/javascript" src="js/ang-module-snippet-editor.js"></script>
 
 
 <!-- Right Panel -->

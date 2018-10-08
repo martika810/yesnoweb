@@ -50,14 +50,21 @@ snippetApp.controller('snippetController',function($scope,$http,$location){
 
 
     $scope.displayHtmlSnippet = function(snippetId){
-        var config = {headers:  {
-                "token" : "testing"
-            }};
         $http.get(hostUrl+'/snippet/html/'+snippetId,config)
             .then(function(response){
                $scope.selectedHtmlSnippet = response.data;
             });
-        jQuery('#displayHtmlModal').addClass('show');
+        jQuery('#snippetEditorPanel').addClass('show');
+    }
+
+    $scope.openSnippetEditor = function(snippetId){
+
+       jQuery('.sliding-section').slideUp();
+       jQuery('#snippetEditorPanel').slideDown();
+    }
+    $scope.openSnippetPanel = function(){
+       jQuery('.sliding-section').slideUp();
+       jQuery('#snippetPanel').slideDown();
     }
     $scope.cleanupSnippetPanel = function(){
         jQuery('#snippetPanel').find('.snippetList').remove();
@@ -102,10 +109,14 @@ snippetApp.controller('snippetController',function($scope,$http,$location){
 
     $scope.populateSnippetPanel();
     $scope.createListenerAddSnippet();
+    $scope.openSnippetPanel();
     $scope.activeModal = function(){
         // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
         $('.modal').modal();
+        $('#color-picker').colorpicker({});
     }
+
+    //jQuery('#color-picker').colorpicker({});
 
 
 });

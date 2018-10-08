@@ -25,3 +25,9 @@
     background-color: initial;
     border-radius: .0rem;
 }
+
+.card .card-header ul li {
+    display: table-cell;
+    padding: 0 1rem;
+    text-align: center;
+}
